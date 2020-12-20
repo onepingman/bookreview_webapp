@@ -22,7 +22,7 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 conn = psycopg2.connect(
-    """postgres://sjgcgjtvhpbxfb:92820b851bb466fd170a93afaadfe34271651c9016bb90f461fa0dbc7a7cbd64@ec2-34-224-229-81.compute-1.amazonaws.com:5432/debu8o94v5beh2"""
+    """DATABASE_URL"""
 )
 cursor=conn.cursor()
 #Home page
