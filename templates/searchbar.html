@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block title %}SearchBar{% endblock %}
+
+
+
+{% block body %}
+<div class="col-12 d-flex justify-content-center">
+  <h1>Find any book</h1>
+</div>
+<div>
+<form action="" class="form-horizontal" method="post">
+    <div class="form-group form-group-lg">
+      <div class="col-sm-6">
+        <input class="form-control" type="text" id="lg" placeholder="Search any book by entering its Title OR Author OR ISBN number" name="searchresult">
+	<button type="submit" class="btn btn-primary ">Search</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<table class="table table-hover table-dark">
+<thead>
+	<tr>
+	<th>ISBN number</th>
+	<th>Book Title</th>
+	<th>Book Author</th>
+	</tr>
+</thead>
+<tbody>
+	{% for results in searched_result %}
+	
+	<tr>
+	<td>{{results.isbn}}</td>
+	<td><a href="{{url_for('bookinfo',result_id=results.id)}}">{{results.title}}</a></td>
+	<td>{{results.author}}</td>
+	</tr>
+	
+	{% endfor %}
+</tbody>
+</table>
+
+{% endblock %}
+

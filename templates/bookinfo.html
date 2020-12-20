@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block title %}Book Review & Rating{% endblock %}
+
+
+{% block style %}
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center
+}
+.rating>input {
+    display: none
+}
+.rating>label {
+    position: relative;
+    width: 1em;
+    font-size: 6vw;
+    color: #FFD600;
+    cursor: pointer
+}
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+}
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+    opacity: 1 !important
+}
+.rating>input:checked~label:before {
+    opacity: 1
+}
+.rating:hover>input:checked~label:before {
+    opacity: 0.4
+}
+{% endblock %}
+
+
+
+{% block body %}
+<div class="container">
+ <ul>
+        <h1 class="display-3">Book Title: {{ bookinfo.title }}</h>
+        <h1 class="display-5"><li>Book's ISBN number: {{ bookinfo.isbn }}</li></h>
+        <h1 class="display-5"><li>Author of the book: {{ bookinfo.author}}</li></h>
+	<h1 class="display-5"><li>Year in which it was Published: {{ bookinfo.year}}</li></h>
+ </ul>
+</div>
+<br>
+<br>
+<br>
+<h1 style="text-align:center" class="display-5">Please rate the above book and also add your comments </h1>
+
+
+<form action="" method="POST">
+<div class="rating">
+	<input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+ 	<input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> 
+	<input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> 
+	<input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> 
+	<input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+</div>
+	<div align = "center">
+	<textarea class="form-control" id="exampleFormControlTextarea1" rows="5" style="width:600px;" name="review" placeholder="comments"></textarea>
+	<button class="btn btn-primary" type="submit">Submit your review</button>
+	</div>
+</form>
+<div class="rating">
+<h1 style="text-align:center" class="display-5">The book {{ bookinfo.title }} has been rated {{rating_count}} times and has an average rating of {{avg_rating}} <label for="5">☆</label></h1> 
+</div>
+
+{% endblock %}

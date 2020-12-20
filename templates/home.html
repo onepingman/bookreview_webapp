@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}Login or Registration{% endblock %}
+
+
+{% block style %}
+body, html {
+  height: 100%;
+  margin: 0;
+}
+.bg {
+  background-image: url("https://wallup.net/wp-content/uploads/2017/11/22/327871-books-library-bokeh-depth_of_field-748x534.jpg");
+
+  height: 100%; 
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+{% endblock %}
+
+
+{% block body %}
+	<div class="bg">
+	<h1 align="center" style="color:white;"> Welcome to KITAB SAMEEKSHA</h1></br>
+	<h4 align="center" style="color:white;">   To register with us please go to <a href="/register">Register</a> to create your account orelse If you have already registered with us go to <a href="/login">Login</a>.</h4>
+	</div>
+{% endblock %}
+	

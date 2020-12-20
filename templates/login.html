@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block title %}Login{% endblock %}
+
+
+{% block style %}
+body, html {
+  height: 100%;
+  margin: 0;
+}
+.bg {
+  background-image: url("https://wallup.net/wp-content/uploads/2017/11/22/327871-books-library-bokeh-depth_of_field-748x534.jpg");
+
+  height: 100%; 
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+{% endblock %}
+
+
+{% block body %}
+<div class="bg">
+ <div class="container">
+	<h1 style="color:white;">Login</h><br>
+	<form action="" method="post">
+		<div class="form-group">
+		<input type="text" name="username" class="form-control" placeholder="username" required>
+		</div>
+		<div class="form-group">
+		<input type="password" name="password" class="form-control" placeholder="password" required>
+		</div>
+		<button class="btn btn-primary" type="submit">Submit</button>
+	</form>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+please refer this to create sql tables and to set necessary env variables
+
+
+###############SQL TABLES################################
+CREATE TABLE books (
+    id SERIAL PRIMARY KEY,
+    isbn VARCHAR NOT NULL,
+    title VARCHAR NOT NULL,
+    author VARCHAR NOT NULL,
+     year VARCHAR NOT NULL
+);
+
+
+CREATE TABLE books (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    username VARCHAR NOT NULL,
+    password VARCHAR NOT NULL
+);
+
+CREATE TABLE books (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR NOT NULL,
+    isbn VARCHAR NOT NULL,
+    rating INTEGER NOT NULL,
+    comments VARCHAR NOT NULL
+);
+#######################################################
+
+
+###########environment variables###################
+DATABASE_URL=postgres://User:Password@Host:5432/Database
+FLASK_APP=application.py
+FLASK_DEBUG=1
+###################################################
