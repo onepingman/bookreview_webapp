@@ -47,7 +47,7 @@ CREATE TABLE books (
 
 
 ###########environment variables###################
-DATABASE_URL=postgres://User:Password@Host:5432/Database
+DATABASE_URL=[Your URL]
 FLASK_APP=application.py
 FLASK_DEBUG=1
 ###################################################
